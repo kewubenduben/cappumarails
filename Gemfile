@@ -50,5 +50,6 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0'
   # gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano3-puma', group: :development
+  gem 'capistrano-rails-db', require: false
 end
 

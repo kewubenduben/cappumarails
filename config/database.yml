@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: cappumarails_production
-  username: cappumarails
+  username: vagrant
   password: <%= ENV['CAPPUMARAILS_DATABASE_PASSWORD'] %>

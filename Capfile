@@ -19,7 +19,9 @@ require "capistrano/deploy"
 require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
+require 'capistrano/rails'
 require 'capistrano/rails/assets'
+require 'capistrano/rails/db'
 require 'capistrano/rails/migrations'
 require 'capistrano/puma'
 require 'capistrano/puma/workers' # if you want to control the workers (in cluster mode)
