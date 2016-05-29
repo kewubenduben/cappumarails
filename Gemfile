@@ -53,3 +53,4 @@ group :development do
   gem 'capistrano-rails-db', require: false
 end
 
+gem 'puma'
