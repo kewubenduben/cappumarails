@@ -47,7 +47,8 @@ group :development do
   gem 'capistrano', '~> 3.1'
   gem 'capistrano-bundler', '~> 1.1'
   gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano-rbenv', '~> 2.0'
+  # gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma', group: :development
 end
 
