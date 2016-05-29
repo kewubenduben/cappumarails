@@ -66,12 +66,14 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-    sudo locale-gen en_EN.UTF-8
     sudo add-apt-repository ppa:chris-lea/node.js
     sudo apt-get update
+    sudo apt-get -y dist-upgrade
+    sudo locale-gen en_PH.UTF-8
+    sudo apt-get -y install language-pack-en
     sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
-    sudo apt-get -y install nodejs nginx
-    sudo apt-get -y install mysql-client libmysqlclient-dev libpq-dev postgresql
+    sudo apt-get -y install nodejs nginx nginx-extras apt-transport-https ca-certificates
+    sudo apt-get -y install mysql-client libmysqlclient-dev libpq-dev postgresql postgresql-contrib
 
     sudo -u postgres createuser vagrant -d
     sudo -u postgres createdb vagrant
@@ -90,5 +92,6 @@ Vagrant.configure(2) do |config|
     rbenv global 2.3.1
     rbenv rehash
     gem install bundler
+
   SHELL
 end
