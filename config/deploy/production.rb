@@ -41,11 +41,11 @@ server 'minahost.com', user: 'vagrant', roles: %w{app db web}, my_property: :my_
 #
 # Global options
 # --------------
-set :ssh_options, {
- keys: %w(.vagrant/machines/default/virtualbox/private_key),
- forward_agent: true,
- auth_methods: %w(publickey password)
-}
+# set :ssh_options, {
+#  keys: %w(.vagrant/machines/default/virtualbox/private_key),
+#  forward_agent: true,
+#  auth_methods: %w(publickey password)
+# }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
