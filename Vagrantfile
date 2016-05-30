@@ -67,10 +67,13 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo add-apt-repository ppa:chris-lea/node.js
+    wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+    sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
     sudo apt-get update
     sudo apt-get -y dist-upgrade
     sudo locale-gen en_PH.UTF-8
     sudo apt-get -y install language-pack-en
+    sudo apt-get -y install jenkins openjdk-7-jdk
     sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
     sudo apt-get -y install nodejs nginx nginx-extras apt-transport-https ca-certificates monit
     sudo apt-get -y install mysql-client libmysqlclient-dev libpq-dev postgresql postgresql-contrib
